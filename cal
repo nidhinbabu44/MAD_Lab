@@ -1,0 +1,12 @@
+int a= Integer.parseInt(ed1.getText().toString());
+                int b= Integer.parseInt(ed2.getText().toString());
+                int sum=a+b;
+                Intent i=new Intent(getApplicationContext(),ResultActivity.class);
+                i.putExtra("key",sum);
+                startActivity(i);
+                
+                int result=getIntent().getExtras().getInt("key",0);
+        String i=String.valueOf(result);
+        ed1.setText(i);
+                
+                
