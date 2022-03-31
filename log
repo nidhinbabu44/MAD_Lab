@@ -1,0 +1,29 @@
+        if (getUserName!=null)
+        {
+            Intent i=new Intent(getApplicationContext(),MainActivity.class);
+            startActivity(i);
+        }
+        b1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getUserName=ed1.getText().toString();
+                getPassword=ed2.getText().toString();
+                if(getUserName.equals("abc@gmail.com")&&getPassword.equals("12345"))
+                {
+                    Intent i=new Intent(getApplicationContext(),EditActivity.class);
+                    i.putExtra("Username",getUserName);
+                    i.putExtra("Password",getPassword);
+                    startActivity(i);
+                }
+                else
+                {
+                    Toast.makeText(getApplicationContext(), "Invalid Credinentals", Toast.LENGTH_SHORT).show();
+                }
+
+
+
+
+
+   ed1=(EditText)findViewById(R.id.test);
+        name=getIntent().getExtras().getString("Username");
+        ed1.setText(name);
